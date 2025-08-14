@@ -49,4 +49,6 @@ public class PeliculaController {
         peliculaService.eliminar(id);
         return "redirect:/admin/peliculas";
     }
+
+    
 }
