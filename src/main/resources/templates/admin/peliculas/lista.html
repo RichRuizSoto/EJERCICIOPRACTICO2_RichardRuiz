@@ -2,11 +2,14 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Administrar Películas</title>
+    <link rel="stylesheet" th:href="@{/styles/admin.css}" />
 </head>
 <body>
     <h2>Listado de Películas</h2>
-    <a th:href="@{/admin/peliculas/nuevo}">Agregar Nueva Película</a>
-    <table border="1">
+
+    <a th:href="@{/admin/peliculas/nuevo}" class="agregar-btn">Agregar Nueva Película</a>
+
+    <table class="peliculas-table">
         <thead>
             <tr>
                 <th>Título</th>
@@ -23,14 +26,18 @@
                 <td th:text="${pelicula.duracion} + ' min'"></td>
                 <td th:text="${pelicula.genero}"></td>
                 <td>
-                    <a th:href="@{'/admin/peliculas/editar/' + ${pelicula.id}}">Editar</a> |
-                    <a th:href="@{'/admin/peliculas/eliminar/' + ${pelicula.id}}" 
-                       onclick="return confirm('¿Seguro que quieres eliminar esta película?');">Eliminar</a>
+                    <a th:href="@{'/admin/peliculas/editar/' + ${pelicula.id}}" class="editar-btn">Editar</a>
+                    <a th:href="@{'/admin/peliculas/eliminar/' + ${pelicula.id}}"
+                       class="eliminar-btn"
+                       onclick="return confirm('¿Seguro que quieres eliminar esta película?');">
+                       Eliminar
+                    </a>
                 </td>
             </tr>
         </tbody>
     </table>
+
     <br/>
-    <a href="/">Volver al inicio</a>
+    <a href="/" class="volver-btn">Volver al inicio</a>
 </body>
 </html>

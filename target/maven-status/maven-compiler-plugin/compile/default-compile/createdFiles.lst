@@ -1,6 +1,6 @@
 com/tienda/ProjectConfig.class
 com/tienda/repository/PeliculaRepository.class
+com/tienda/DemoApplication.class
 com/tienda/controller/PeliculaController.class
 com/tienda/model/Pelicula.class
 com/tienda/service/PeliculaService.class
-com/tienda/demo/DemoApplication.class
