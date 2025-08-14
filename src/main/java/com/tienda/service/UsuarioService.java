@@ -31,4 +31,9 @@ public class UsuarioService {
     public void eliminar(Long id) {
         usuarioRepository.deleteById(id);
     }
+
+    // ✅ NUEVO MÉTODO DE AUTENTICACIÓN
+    public Optional<Usuario> autenticar(String correo, String contrasena) {
+        return usuarioRepository.findByCorreoAndContrasena(correo, contrasena);
+    }
 }

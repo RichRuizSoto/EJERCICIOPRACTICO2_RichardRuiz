@@ -22,22 +22,22 @@ public class SeguridadFiltro implements Filter {
         String path = req.getRequestURI();
 
         // Permitir libremente estas rutas
-        if (path.startsWith("/login") || path.startsWith("/sin-login") || path.equals("/")) {
+        if (path.equals("/") || path.startsWith("/login") || path.startsWith("/modo-invitado")) {
             chain.doFilter(request, response);
             return;
         }
 
-        boolean autenticado = session != null && Boolean.TRUE.equals(session.getAttribute("autenticado"));
-        boolean sinLogin = session != null && Boolean.TRUE.equals(session.getAttribute("modo_sin_login"));
+        boolean usuarioLogueado = session != null && Boolean.TRUE.equals(session.getAttribute("usuarioLogueado"));
+        boolean modoInvitado = session != null && Boolean.FALSE.equals(session.getAttribute("usuarioLogueado"));
 
-        // Si es sin login, solo permitir acceso a /reservar/nueva
-        if (sinLogin && !path.equals("/reservar/nueva")) {
+        // Si es modo invitado, solo permitir acceso a /reservar/nueva
+        if (modoInvitado && !path.equals("/reservar/nueva")) {
             res.sendRedirect("/");
             return;
         }
 
-        // Si no autenticado y no modo sin login, redirigir a inicio
-        if (!autenticado && !sinLogin) {
+        // Si no está logueado y no es invitado, redirigir a /
+        if (!usuarioLogueado && !modoInvitado) {
             res.sendRedirect("/");
             return;
         }
