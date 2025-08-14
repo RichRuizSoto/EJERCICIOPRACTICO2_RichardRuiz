@@ -1,10 +1,49 @@
-<!-- templates/login/select.html -->
 <!DOCTYPE html>
 <html>
 <head>
     <title>Selecciona el modo de acceso</title>
 </head>
 <body>
+    <style>
+        /* src/main/resources/static/styles/select.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #eaf2f8;
+    color: #34495e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+a {
+    display: inline-block;
+    background-color: #2980b9;
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    margin: 10px 0;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    width: 220px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+a:hover {
+    background-color: #1c5980;
+}
+
+    </style>
     <h1>Bienvenido</h1>
     <a href="/login">Iniciar Sesión</a><br>
     <a href="/modo-invitado">Continuar sin iniciar sesión</a>

@@ -2,9 +2,83 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Reservar Entradas</title>
-    <link rel="stylesheet" th:href="@{/styles/index.css}" />
 </head>
 <body class="main">
+    <style>
+        /* src/main/resources/static/styles/index.css */
+
+body.main {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f7f9fc;
+    color: #333;
+    margin: 40px auto;
+    max-width: 500px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+.pelicula-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.pelicula-form label {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.pelicula-form input[type="text"],
+.pelicula-form input[type="number"] {
+    padding: 8px 12px;
+    border: 1.5px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.pelicula-form input[type="text"]:focus,
+.pelicula-form input[type="number"]:focus {
+    border-color: #2980b9;
+    outline: none;
+}
+
+.pelicula-form button {
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pelicula-form button:hover {
+    background-color: #1c5980;
+}
+
+a {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #2980b9;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #1c5980;
+}
+
+    </style>
     <h1 th:text="${reserva.id == null ? 'Nueva Reserva' : 'Editar Reserva'}"></h1>
 
     <form th:action="@{/reservar/guardar}" th:object="${reserva}" method="post" class="pelicula-form">
@@ -21,7 +95,7 @@
 
         <button type="submit">Guardar</button>
     </form>
-
+    <br>
     <a th:href="@{/reservar}">Volver a la lista</a>
 </body>
 </html>
