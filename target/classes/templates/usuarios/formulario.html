@@ -2,8 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Formulario Usuario</title>
+    <link rel="stylesheet" th:href="@{/styles/index.css}">
 </head>
 <body>
+
+    <main class="main">
     <h1 th:text="${usuario.id != null} ? 'Editar Usuario' : 'Nuevo Usuario'"></h1>
     <form th:action="@{/usuarios/guardar}" th:object="${usuario}" method="post">
         <input type="hidden" th:field="*{id}" />
@@ -23,5 +26,8 @@
         <button type="submit">Guardar</button>
     </form>
     <a th:href="@{/usuarios}">Cancelar</a>
+
+    </main>
+
 </body>
 </html>
