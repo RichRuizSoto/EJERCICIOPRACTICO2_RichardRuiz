@@ -1,43 +1,19 @@
+
+
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Administrar Películas</title>
-    <link rel="stylesheet" th:href="@{/styles/admin.css}" />
-</head>
-<body>
-    <h2>Listado de Películas</h2>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="~{layout/plantilla :: head}">
+        <title>Administrar Películas</title>
+        <link rel="stylesheet" th:href="@{/styles/index.css}" />
+    </head>
+    <body>
+        <header th:replace="~{layout/plantilla :: header}"/>
 
-    <a th:href="@{/admin/peliculas/nuevo}" class="agregar-btn">Agregar Nueva Película</a>
+        <section th:replace="~{admin/peliculas/fragmentos :: mainContenido}"/>
 
-    <table class="peliculas-table">
-        <thead>
-            <tr>
-                <th>Título</th>
-                <th>Director</th>
-                <th>Duración</th>
-                <th>Género</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="pelicula : ${peliculas}">
-                <td th:text="${pelicula.titulo}"></td>
-                <td th:text="${pelicula.director}"></td>
-                <td th:text="${pelicula.duracion} + ' min'"></td>
-                <td th:text="${pelicula.genero}"></td>
-                <td>
-                    <a th:href="@{'/admin/peliculas/editar/' + ${pelicula.id}}" class="editar-btn">Editar</a>
-                    <a th:href="@{'/admin/peliculas/eliminar/' + ${pelicula.id}}"
-                       class="eliminar-btn"
-                       onclick="return confirm('¿Seguro que quieres eliminar esta película?');">
-                       Eliminar
-                    </a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
-    <br/>
-    <a href="/" class="volver-btn">Volver al inicio</a>
-</body>
+        <footer th:replace="~{layout/plantilla :: footer}"/>      
+    </body>
 </html>
+
+

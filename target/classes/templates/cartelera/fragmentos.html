@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Cartelera</title>
+    <link rel="stylesheet" th:href="@{/styles/estilos.css}">
+</head>
+
+<body>
+    <th:block th:fragment="mainContenido">
+        <main class="main">
+            <h1>Cartelera de Películas</h1>
+
+            <div th:if="${peliculas != null and !peliculas.isEmpty()}">
+                <ul>
+                    <li th:each="pelicula : ${peliculas}">
+                        <h2 th:text="${pelicula.titulo}">Título</h2>
+                        <p><strong>Director:</strong> <span th:text="${pelicula.director}"></span></p>
+                        <p><strong>Duración:</strong> <span th:text="${pelicula.duracion}"></span> min</p>
+                        <p><strong>Género:</strong> <span th:text="${pelicula.genero}"></span></p>
+                        <p><strong>Descripción:</strong> <span
+                                th:text="${pelicula.descripcion} ?: 'Sin descripción'"></span></p>
+                        <hr />
+                    </li>
+                </ul>
+            </div>
+
+            <div th:if="${peliculas == null or peliculas.isEmpty()}">
+                <p>No hay películas disponibles en la cartelera.</p>
+            </div>
+        </main>
+    </th:block>
+
+</body>
+
+</html>

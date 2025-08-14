@@ -60,7 +60,7 @@ html, body {
 }
 
 .header-vans-btn {
-    background-image: url(./../icons/publico.png);
+    background-image: url(./../icons/palomitas-de-maiz.png);
     height: 50px;
     width: 90px;
     background-size: 40px 40px; /* tamaño más pequeño que el contenedor */
@@ -516,6 +516,7 @@ html, body {
         .main {
             margin: 2rem auto;
             margin-top: 6rem;
+            margin-bottom: 3rem;
             max-width: 600px;
             font-family: Arial, sans-serif;
             text-align: center;
