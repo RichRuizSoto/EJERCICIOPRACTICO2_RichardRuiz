@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Gestión de Cine</title>
+
+</head>
+
+<body>
+    <th:block th:fragment="mainContenido">
+        <main class="main">
+            <h1>Bienvenido al Sistema de Cine</h1>
+            <button class="option-btn" th:onclick="|window.location.href='@{/admin/peliculas}'|">
+                Administrar Películas
+            </button>
+            <button class="option-btn" th:onclick="|window.location.href='@{/cartelera}'|">
+                Visualizar Cartelera
+            </button>
+            <button class="option-btn" th:onclick="|window.location.href='@{/reservar}'|">
+                Reservar Entradas
+            </button>
+            <button class="option-btn" th:onclick="|window.location.href='@{/entradas}'|">
+                Ver Entradas
+            </button>
+            <button class="option-btn" th:onclick="|window.location.href='@{/usuarios}'|">
+                Ver Usuarios
+            </button>
+        </main>
+    </th:block>
+</body>
+
+</html>
