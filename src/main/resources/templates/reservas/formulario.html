@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Reservar Entradas</title>
+</head>
+<body>
+    <h1 th:text="${reserva.id == null ? 'Nueva Reserva' : 'Editar Reserva'}"></h1>
+
+    <form th:action="@{/reservar/guardar}" th:object="${reserva}" method="post">
+        <input type="hidden" th:field="*{id}" />
+
+        <label>Nombre del Cliente:</label>
+        <input type="text" th:field="*{nombreCliente}" required/><br/>
+
+        <label>Cantidad de Entradas:</label>
+        <input type="number" th:field="*{cantidadEntradas}" required/><br/>
+
+        <label>Pelicula:</label>
+        <input type="text" th:field="*{pelicula}" required/><br/>
+
+        <button type="submit">Guardar</button>
+    </form>
+
+    <a th:href="@{/reservar}">Volver a la lista</a>
+</body>
+</html>
