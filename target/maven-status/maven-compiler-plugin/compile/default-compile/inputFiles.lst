@@ -1,5 +1,6 @@
 /Users/richardruiz/Desktop/EJERCICIOPRACTICO2_RichardRuiz/src/main/java/com/tienda/DemoApplication.java
 /Users/richardruiz/Desktop/EJERCICIOPRACTICO2_RichardRuiz/src/main/java/com/tienda/ProjectConfig.java
+/Users/richardruiz/Desktop/EJERCICIOPRACTICO2_RichardRuiz/src/main/java/com/tienda/controller/AuthController.java
 /Users/richardruiz/Desktop/EJERCICIOPRACTICO2_RichardRuiz/src/main/java/com/tienda/controller/CarteleraController.java
 /Users/richardruiz/Desktop/EJERCICIOPRACTICO2_RichardRuiz/src/main/java/com/tienda/controller/PeliculaController.java
 /Users/richardruiz/Desktop/EJERCICIOPRACTICO2_RichardRuiz/src/main/java/com/tienda/controller/ReservaController.java
@@ -10,6 +11,7 @@
 /Users/richardruiz/Desktop/EJERCICIOPRACTICO2_RichardRuiz/src/main/java/com/tienda/repository/PeliculaRepository.java
 /Users/richardruiz/Desktop/EJERCICIOPRACTICO2_RichardRuiz/src/main/java/com/tienda/repository/ReservaRepository.java
 /Users/richardruiz/Desktop/EJERCICIOPRACTICO2_RichardRuiz/src/main/java/com/tienda/repository/UsuarioRepository.java
+/Users/richardruiz/Desktop/EJERCICIOPRACTICO2_RichardRuiz/src/main/java/com/tienda/security/SeguridadFiltro.java
 /Users/richardruiz/Desktop/EJERCICIOPRACTICO2_RichardRuiz/src/main/java/com/tienda/service/PeliculaService.java
 /Users/richardruiz/Desktop/EJERCICIOPRACTICO2_RichardRuiz/src/main/java/com/tienda/service/ReservaService.java
 /Users/richardruiz/Desktop/EJERCICIOPRACTICO2_RichardRuiz/src/main/java/com/tienda/service/UsuarioService.java
