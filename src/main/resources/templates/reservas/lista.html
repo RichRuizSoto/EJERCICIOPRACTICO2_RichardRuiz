@@ -1,32 +1,17 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Listado de Reservas</title>
-</head>
-<body>
-    <h1>Listado de Reservas</h1>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="~{layout/plantilla :: head}">
+        <title>TechShop</title>
+        <link rel="stylesheet" th:href="@{/styles/index.css}" />
+    </head>
+    <body>
+        <header th:replace="~{layout/plantilla :: header}"/>
 
-    <a th:href="@{/reservar/nueva}">Nueva Reserva</a>
+        <section th:replace="~{reservas/fragmentos :: mainContenido}"/>
 
-    <table border="1">
-        <tr>
-            <th>ID</th>
-            <th>Cliente</th>
-            <th>Entradas</th>
-            <th>Pelicula</th>
-            <th>Acciones</th>
-        </tr>
-        <tr th:each="reserva : ${reservas}">
-            <td th:text="${reserva.id}"></td>
-            <td th:text="${reserva.nombreCliente}"></td>
-            <td th:text="${reserva.cantidadEntradas}"></td>
-            <td th:text="${reserva.pelicula}"></td>
-            <td>
-                <a th:href="@{'/reservar/editar/' + ${reserva.id}}">Editar</a>
-                |
-                <a th:href="@{'/reservar/eliminar/' + ${reserva.id}}">Eliminar</a>
-            </td>
-        </tr>
-    </table>
-</body>
+        <footer th:replace="~{layout/plantilla :: footer}"/>      
+    </body>
 </html>
+
+

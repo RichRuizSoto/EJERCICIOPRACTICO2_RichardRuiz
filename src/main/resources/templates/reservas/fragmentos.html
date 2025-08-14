@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Listado de Reservas</title>
+</head>
+
+<body>
+
+    <th:block th:fragment="mainContenido">
+
+        <h1 style="margin-top: 6rem;">Listado de Reservas</h1>
+
+        <a th:href="@{/reservar/nueva}">Nueva Reserva</a>
+
+        <table border="1">
+            <tr>
+                <th>ID</th>
+                <th>Cliente</th>
+                <th>Entradas</th>
+                <th>Pelicula</th>
+                <th>Acciones</th>
+            </tr>
+            <tr th:each="reserva : ${reservas}" style="margin-bottom: 3rem;">
+                <td th:text="${reserva.id}"></td>
+                <td th:text="${reserva.nombreCliente}"></td>
+                <td th:text="${reserva.cantidadEntradas}"></td>
+                <td th:text="${reserva.pelicula}"></td>
+                <td>
+                    <a th:href="@{'/reservar/editar/' + ${reserva.id}}">Editar</a>
+                    |
+                    <a th:href="@{'/reservar/eliminar/' + ${reserva.id}}">Eliminar</a>
+                </td>
+            </tr>
+        </table>
+                <br />
+        <a href="/" class="volver-btn" style="margin-bottom: 3rem;">Volver al inicio</a>
+    </th:block>
+</body>
+
+</html>
